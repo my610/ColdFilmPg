@@ -1,0 +1,147 @@
+.vue-instant__suggestions li.highlighted__custom {
+  /*background-color: #ff0000;*/
+  color: #18BC9C;
+}
+.vue-instant__suggestions li:hover {
+  background-color: #F5F8FA;
+  color: #18BC9C;
+}
+.vue-instant__suggestions {
+  margin-top: 0;
+}
+
+.sbx-custom {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 27px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin-top: -12px;
+}
+
+.sbx-custom__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.sbx-custom__input-placeholder, .sbx-custom__input {
+  display: inline-block;
+  transition: box-shadow .4s ease, background .4s ease;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #ccc;
+  /*background: #F5F8FA;*/
+  padding: 0;
+  padding-right: 46px;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  white-space: normal;
+  font-size: inherit;
+  appearance: none;
+}
+
+.sbx-custom__input::-webkit-search-decoration, .sbx-custom__input::-webkit-search-cancel-button, .sbx-custom__input::-webkit-search-results-button, .sbx-custom__input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.sbx-custom__input:hover {
+  box-shadow: inset 0 0 0 1px #b3b3b3;
+}
+
+.sbx-custom__input:focus, .sbx-custom__input:active {
+  outline: 0;
+  box-shadow: inset 0 0 0 1px #18BC9C;
+  background: #FFFFFF;
+}
+
+.sbx-custom__input::placeholder {
+  color: #9AAEB5;
+}
+
+.sbx-custom__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: inherit;
+  margin: 0;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  background-color: rgba(62, 130, 247, 0);
+  padding: 0;
+  width: 27px;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+  font-size: inherit;
+  user-select: none;
+}
+
+.sbx-custom__submit::before {
+  display: inline-block;
+  margin-right: -4px;
+  height: 100%;
+  vertical-align: middle;
+  content: '';
+}
+
+.sbx-custom__submit:hover, .sbx-custom__submit:active {
+  cursor: pointer;
+}
+
+.sbx-custom__submit:focus {
+  outline: 0;
+}
+
+.sbx-custom__submit svg {
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  fill: #18BC9C;
+}
+
+.sbx-custom__reset {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 27px;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  user-select: none;
+  fill: rgba(0, 0, 0, 0.5);
+}
+
+.sbx-custom__reset:focus {
+  outline: 0;
+}
+
+.sbx-custom__reset svg {
+  display: block;
+  margin: 4px;
+  width: 11px;
+  height: 11px;
+}
+
+.sbx-custom__input:valid ~ .sbx-custom__reset {
+  display: block;
+  animation-name: sbx-reset-in;
+  animation-duration: .15s;
+}
+
+@keyframes sbx-reset-in {
+  0% {
+    transform: translate3d(-20%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
