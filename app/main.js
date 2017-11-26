@@ -7,6 +7,8 @@ import store from './store/'
 // import './feathers-client-io'
 import components from './components/register'
 import { sync } from 'vuex-router-sync'
+import ToggleButton from 'vue-js-toggle-button'
+Vue.use(ToggleButton)
 
 Vue.config.productionTip = false
 components.registerAllGlobalComponents()
