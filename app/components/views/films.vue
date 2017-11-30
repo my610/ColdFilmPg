@@ -71,7 +71,13 @@
               <td><a @click="film = item" style="cursor: pointer;">{{ item.title }}</a>
               </td>
               <td class="text-center">{{ item.season }}</td>
-              <td class="text-center">{{ item.last_series }}</td>
+              <td class="text-center">
+                <span :class="{
+                'badge': item.last_series+2 >= item.series_count,
+                'badge-danger': item.last_series+1 === Number(item.series_count),
+                'badge-warning': item.last_series >= item.series_count
+              }">{{item.last_series}}</span>
+              </td>
 
 
               <td class="text-center" :class="{editing: index === edited.id && edited.key === 0}">
@@ -161,10 +167,12 @@
     /*background-color: #ff0000;*/
     color: #18BC9C;
   }
+
   .vue-instant__suggestions li:hover {
     background-color: #F5F8FA;
     color: #18BC9C;
   }
+
   .vue-instant__suggestions {
     margin-top: 0;
   }
@@ -303,6 +311,14 @@
       transform: none;
       opacity: 1;
     }
+  }
+
+  .badge-danger {
+    background-color: #f0ad4e !important;
+  }
+
+  .badge-warning {
+    background-color: #d9534f !important;
   }
 </style>
 
