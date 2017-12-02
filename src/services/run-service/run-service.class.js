@@ -1,4 +1,5 @@
 const errors = require('feathers-errors')
+const tasks = require('../../../crawler/tasks')
 
 /* eslint-disable no-unused-vars */
 class Service {
@@ -7,20 +8,18 @@ class Service {
   }
 
   get (task, params) {
-
     switch (task) {
       case 'checkCategories':
+        tasks.getCategory()
         return Promise.resolve({task})
-        break
       case 'checkTranslation':
+        tasks.checkTranslated()
         return Promise.resolve({task})
-        break
       case 'checkSeries':
+        tasks.crawlerFilmsIdsFromCategory()
         return Promise.resolve({task})
-        break
       case 'addCategory':
         return Promise.resolve({task, text: `category id: ${params.query.id}`})
-        break
     }
 
     const badRequest = new errors.BadRequest({task})
