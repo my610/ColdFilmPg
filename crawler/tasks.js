@@ -172,7 +172,7 @@ exports.checkTranslated = async () => {
 
     log(chalk.bgRed.bold(' >>'), `urls: ${urls.length}`)
 
-    for (const item of urls) {
+    eachLimit(urls, 5, async (item) => {
 
       let {data} = await axios.get(item.url)
       let film = parser.checkTranslatedFromHtml(data)
@@ -202,7 +202,7 @@ exports.checkTranslated = async () => {
         }
       }
       // telegram.sendPost(film)
-    }
+    })
   } catch (e) {
     log(chalk.bgRed.bold(' >>> '), e.message)
   }
