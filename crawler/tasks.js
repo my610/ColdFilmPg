@@ -1,6 +1,6 @@
 const cli = require('axios')
 let axios = cli.create()
-// const telegram = require('./msgTgTest')
+const telegram = require('./tgMsg')
 const parser = require('./parser')
 const Agent = require('socks5-http-client/lib/Agent')
 const config = require('./config')
@@ -196,6 +196,7 @@ exports.checkTranslated = async () => {
           //     film.id,
           //     film.category
           //   ])
+          telegram.sendPost(film)
         } catch (e) {
           log(chalk.bgRed.bold(' >>> '), e.message)
         }

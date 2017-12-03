@@ -63,6 +63,7 @@
     "serve-favicon": "^2.4.5",
     "socket.io-client": "^2.0.4",
     "socks5-http-client": "^1.0.2",
+    "telegram-node-bot": "^2.0.8",
     "vue": "^2.5.8",
     "vue-instant": "^1.0.2",
     "vue-js-toggle-button": "^1.2.0",
