@@ -36,7 +36,7 @@ exports.sendPost = function (film) {
       torrents.push(
         {
           text: `💿 ${item.quality}`,
-          // url: item.torrent,
+          url: item.torrent,
           callback_data: `${item.id}|${item.quality}`
         }
       )
